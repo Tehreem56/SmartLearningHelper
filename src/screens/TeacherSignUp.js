@@ -13,7 +13,7 @@ const TeacherSignUp = ({ navigation }) => {
       <SafeAreaView style={styles.container1}>
         <View style={styles.upperPart}>
           <TouchableOpacity
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.navigate('SelectRole')}
             style={styles.arrow}
           >
             <ArrowLeftIcon size="20" color="black" />

@@ -3,7 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { themeColors } from '../theme';
 import { widthPercentageToDP as wp ,heightPercentageToDP as hp} from 'react-native-responsive-screen';
-const SelectRole=() =>{
+const SelectRole=({navigation}) =>{
   return (
     <SafeAreaView  style={styles.container}>
     <View >
