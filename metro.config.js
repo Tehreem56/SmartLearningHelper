@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+
   transformer: {
     getTransformOptions: async () => ({
       transform: {
@@ -13,6 +14,10 @@ module.exports = {
         inlineRequires: true,
       },
     }),
+  },
+
+  resolver: {
+    assetExts: ['png', 'jpg', 'jpeg', 'gif'],
   },
 };
 
