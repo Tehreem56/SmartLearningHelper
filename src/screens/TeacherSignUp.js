@@ -20,7 +20,7 @@ const TeacherSignUp = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.imgview}>
-          <Text style={{ color: themeColors.bg2, alignSelf: "center", fontSize: 20, fontWeight: "600" }}>Teacher Sign Up</Text>
+        <Text  style={{color:themeColors.bg2, alignSelf:"center",fontSize:25,fontWeight:"700",height:hp(4.8),marginTop:hp(1)}}>Teacher Sign Up</Text>
           <Image source={require('../assets/images/signup.png')}
             style={styles.img} />
         </View>
@@ -40,12 +40,6 @@ const TeacherSignUp = ({ navigation }) => {
                 
                
                 placeholder='Enter Your Email'
-            /><Text  style={styles.Titlebox}>Password</Text>
-            <TextInput
-             style={styles.Inputbox}
-                
-              secureTextEntry
-                placeholder='Enter Password'
             />
             <Text  style={styles.Titlebox}>Years of Experience</Text>
             <TextInput
@@ -75,6 +69,21 @@ const TeacherSignUp = ({ navigation }) => {
               
                 placeholder='Enter Qualification'
             />
+            <Text  style={styles.Titlebox}>Password</Text>
+            <TextInput
+             style={styles.Inputbox}
+                
+              secureTextEntry
+                placeholder='Enter Password'
+            />
+            <Text  style={styles.Titlebox}>Confirm Password</Text>
+            <TextInput
+             style={styles.Inputbox}
+                
+              secureTextEntry
+                placeholder='Re_Enter Password'
+            />
+             <View style={{width:wp(85),justifyContent:'center',alignContent:'center',alignItems:'center'}}>
             <TouchableOpacity
               style={styles.btn}
             >
@@ -82,21 +91,17 @@ const TeacherSignUp = ({ navigation }) => {
                 Sign Up
               </Text>
             </TouchableOpacity>
+            </View>
           </View>
         </ScrollView>
         <Text style={styles.txt}>Or</Text>
-        <View style={styles.iconView}>
-          <TouchableOpacity >
-            <Image source={require('../assets/icons/google.png')}
-              style={styles.icon} />
-          </TouchableOpacity>
-        </View>
+      
         <View style={styles.bottonPart}>
-          <Text style={styles.bottomtxt}>Already have an account?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <Text style={styles.linkbtn}> Log In</Text>
-          </TouchableOpacity>
-        </View>
+                    <Text style={styles.bottomtxt}>Already have an account?</Text>
+                    <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
+                        <Text style={styles.linkbtn}> Log In</Text>
+                    </TouchableOpacity>
+                </View>
       </View>
     </ScrollView>
   );
@@ -136,12 +141,14 @@ const styles = StyleSheet.create({
     img:{
         width:wp(50)  ,
         height:hp(17),
-        marginBottom:5,
+        marginBottom:hp(2),
     },
      
     upperPart:{
-        flexDirection:"row",
-        justifyContent:"flex-start"
+      flexDirection:"row",
+      justifyContent:"flex-start",
+      marginLeft:wp(-8),
+      marginTop:hp(-0.7)
     },
     
     imgview:{
@@ -176,34 +183,44 @@ const styles = StyleSheet.create({
         paddingHorizontal:12,
       },
     
-btn:{
-    backgroundColor:themeColors.bg2,
-    borderRadius:7,
-    marginTop:15,
-    
-    
-},
-btntxt:{
-    color:"#191D88",
-    alignSelf:"center",
-    paddingVertical:12,
-    fontSize:16,
-    paddingHorizontal:45,
-    fontWeight:"500"
-    
-},
+      btn:{
+        backgroundColor:themeColors.bg2,
+        borderRadius:7,
+        marginTop:hp(4),
+        width:wp(70),
+        alignContent:'center',
+        justifyContent:'center',
+        
+        
+        
+    },
+    btntxt:{
+        color:"#191D88",
+        alignSelf:"center",
+        paddingVertical:12,
+        fontSize:16,
+        paddingHorizontal:45,
+        fontWeight:"500"
+        
+    },
 bottonPart:{
-    marginTop:2
-   },
-   linkbtn:{
-       color:themeColors.bg3,
-       position:"absolute",
-       marginTop:-19,
-       marginLeft:245,
-   },bottomtxt:{
-   alignSelf:"center",
-   marginLeft:-30,
-   }
+  // marginTop:2,
+   marginBottom:hp(1),
+   height:hp(2.5),
+   marginTop:hp(1),
+  
+  },
+  linkbtn:{
+   color:themeColors.bg2,
+   position:"absolute",
+   marginTop:hp(-2.6),
+   marginLeft:wp(68),
+   
+  },bottomtxt:{
+  alignSelf:"center",
+  marginLeft:-30,
+  color:'black',
+  }
   });
 
 export default TeacherSignUp;

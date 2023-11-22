@@ -23,7 +23,7 @@ const ParentSignUp=({navigation}) =>{
            
         </View>
        <View style={styles.imgview}>
-       <Text  style={{color:themeColors.bg2, alignSelf:"center",fontSize:20,fontWeight:"600"}}>Parent Sign Up</Text>
+       <Text  style={{color:themeColors.bg2, alignSelf:"center",fontSize:25,fontWeight:"700",height:hp(4.8),marginTop:hp(1)}}>Parent Sign Up</Text>
             <Image source={require('../assets/images/signup.png')} 
                 style={styles.img} />
         </View>
@@ -50,14 +50,7 @@ const ParentSignUp=({navigation}) =>{
                 
                
                 placeholder='Enter Your Email'
-            /><Text  style={styles.Titlebox}>Password</Text>
-            <TextInput
-             style={styles.Inputbox}
-                
-              secureTextEntry
-                placeholder='Enter Password'
             />
-            
             <Text  style={styles.Titlebox}>Contact No.</Text>
             <TextInput
              style={styles.Inputbox}
@@ -65,7 +58,22 @@ const ParentSignUp=({navigation}) =>{
               secureTextEntry
                 placeholder='Enter Your Phone Number'
             />
-           
+            <Text  style={styles.Titlebox}>Password</Text>
+            <TextInput
+             style={styles.Inputbox}
+                
+              secureTextEntry
+                placeholder='Enter Password'
+            />
+            <Text  style={styles.Titlebox}>Confirm Password</Text>
+             <TextInput
+             style={styles.Inputbox}
+                
+              secureTextEntry
+                placeholder='Re_Enter Password'
+            />
+        
+           <View style={{width:wp(85),justifyContent:'center',alignContent:'center',alignItems:'center'}}>
             <TouchableOpacity
                style={styles.btn}
             >
@@ -73,23 +81,26 @@ const ParentSignUp=({navigation}) =>{
                     Sign Up
                 </Text>
             </TouchableOpacity>
+            </View>
         </View>
         <Text  style={styles.txt}>
             Or
         </Text>
-        <View style={styles.iconView}>
+        {/* <View style={styles.iconView}>
             <TouchableOpacity  >
                 <Image source={require('../assets/icons/google.png')} 
                     style={styles.icon} />
             </TouchableOpacity>
            
-        </View>
-        <View style={styles.bottonPart}>
+        </View> */}
+            
+            <View style={styles.bottonPart}>
                     <Text style={styles.bottomtxt}>Already have an account?</Text>
                     <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
                         <Text style={styles.linkbtn}> Log In</Text>
                     </TouchableOpacity>
                 </View>
+      
       </View>
     
     </ScrollView>
@@ -106,7 +117,8 @@ const styles = StyleSheet.create({
     },
     icon:{
     height:hp(5),
-     width:wp(10)
+     width:wp(10),
+     marginTop:hp(-3)
     },
     txt:{
 
@@ -135,11 +147,15 @@ const styles = StyleSheet.create({
      
     upperPart:{
         flexDirection:"row",
-        justifyContent:"flex-start"
+        justifyContent:"flex-start",
+        marginLeft:wp(-8),
+        marginTop:hp(-0.7)
+        
     },
     
     imgview:{
-    marginTop:90
+    marginTop:90,
+    height:hp(26)
     },
     arrow:{
         position:"absolute",
@@ -173,7 +189,11 @@ const styles = StyleSheet.create({
 btn:{
     backgroundColor:themeColors.bg2,
     borderRadius:7,
-    marginTop:15,
+    marginTop:hp(4),
+    width:wp(70),
+    alignContent:'center',
+    justifyContent:'center',
+    
     
     
 },
@@ -188,17 +208,21 @@ btntxt:{
 },
 bottonPart:{
    // marginTop:2,
-    marginBottom:5,
+    marginBottom:hp(1),
+    height:hp(2.5),
+    marginTop:hp(1),
    
    },
    linkbtn:{
-       color:themeColors.bg3,
-       position:"absolute",
-       marginTop:-19,
-       marginLeft:245,
+    color:themeColors.bg2,
+    position:"absolute",
+    marginTop:hp(-2.6),
+    marginLeft:wp(68),
+    
    },bottomtxt:{
    alignSelf:"center",
    marginLeft:-30,
+   color:'black',
    }
   });
 export default ParentSignUp;

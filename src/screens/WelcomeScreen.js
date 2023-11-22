@@ -31,7 +31,7 @@ const WelcomeScreen = ({ navigation }) => {
                 <View style={styles.bottonPart}>
                     <Text style={styles.txt}>Already have an account?</Text>
                     <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
-                        <Text style={styles.linkbtn}> Log In</Text>
+                        <Text style={styles.linkbtn}>  Log In</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -52,11 +52,13 @@ const styles = StyleSheet.create({
       fontSize: 29,
       alignSelf:"center",
       fontWeight: 'bold',
+      marginTop:hp(1),
     
     },
     img:{
         width:wp(70)  ,
-        height:hp(30)
+        height:hp(30),
+        marginTop:hp(1),
     },
     btn:{
         backgroundColor:themeColors.bg2,
@@ -71,19 +73,20 @@ const styles = StyleSheet.create({
         
     },
     midPart:{
-        marginTop:23,
+        marginTop:hp(6.6),
     }
     ,txt:{
       color:"white",
+      marginLeft:wp(7),
     },
     bottonPart:{
-     marginTop:9
+     marginTop:hp(1.1)
     },
     linkbtn:{
         color:themeColors.bg2,
         position:"absolute",
-        marginTop:-20,
-        marginLeft:160,
+        marginTop:hp(-2.6),
+        marginLeft:wp(49),
     }
   });
   
