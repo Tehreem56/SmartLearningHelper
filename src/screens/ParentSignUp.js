@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import { widthPercentageToDP as wp,heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
+import TextInputComponent from './components/TextInputComponent';
 const ParentSignUp=({navigation}) =>{
    
   return (
@@ -37,6 +37,7 @@ const ParentSignUp=({navigation}) =>{
         style={styles.container2}
       >
         <View style={styles.formview}>
+<<<<<<< HEAD
             <Text  style={styles.Titlebox}>Full Name</Text>
             <TextInput
              style={styles.Inputbox}
@@ -74,6 +75,16 @@ const ParentSignUp=({navigation}) =>{
             />
         
            <View style={{width:wp(85),justifyContent:'center',alignContent:'center',alignItems:'center'}}>
+=======
+
+            <TextInputComponent label="Complete Name" placeholder="John Smith" secureTextEntry={false} keyboardType="default"/>
+            <TextInputComponent label="Email Address" placeholder="john23@gmail.com" secureTextEntry={false} keyboardType="default"/>
+            <TextInputComponent label="Password" placeholder="123@john.smith" secureTextEntry={true} keyboardType="default"/>
+            <TextInputComponent label="Contact No." placeholder="+923456675634" secureTextEntry={false} keyboardType="numeric"/>
+          
+           
+           
+>>>>>>> upstream/main
             <TouchableOpacity
                style={styles.btn}
             >
@@ -83,6 +94,7 @@ const ParentSignUp=({navigation}) =>{
             </TouchableOpacity>
             </View>
         </View>
+<<<<<<< HEAD
         <Text  style={styles.txt}>
             Or
         </Text>
@@ -95,6 +107,10 @@ const ParentSignUp=({navigation}) =>{
         </View> */}
             
             <View style={styles.bottonPart}>
+=======
+    
+        <View style={styles.bottonPart}>
+>>>>>>> upstream/main
                     <Text style={styles.bottomtxt}>Already have an account?</Text>
                     <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
                         <Text style={styles.linkbtn}> Log In</Text>
@@ -208,9 +224,13 @@ btntxt:{
 },
 bottonPart:{
    // marginTop:2,
+<<<<<<< HEAD
     marginBottom:hp(1),
     height:hp(2.5),
     marginTop:hp(1),
+=======
+    marginBottom:80,
+>>>>>>> upstream/main
    
    },
    linkbtn:{
