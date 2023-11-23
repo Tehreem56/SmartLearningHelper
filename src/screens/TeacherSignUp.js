@@ -5,12 +5,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeftIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import TextInputComponent from './components/TextInputComponent';
-import ImagePickerComponent from './components/ImagePickerComponent';
-import PickDocumentComponent from './components/PickDocumentComponent';
+
 const TeacherSignUp = ({ navigation }) => {
-
-
 
   return (
     <ScrollView style={{ backgroundColor: themeColors.bg, flex: 1 }}>
@@ -32,7 +28,6 @@ const TeacherSignUp = ({ navigation }) => {
       <View style={styles.container2}>
         <ScrollView>
           <View style={styles.formview}>
-<<<<<<< HEAD
             <Text style={styles.Titlebox}>Full Name</Text>
             <TextInput
               style={styles.Inputbox}
@@ -89,19 +84,6 @@ const TeacherSignUp = ({ navigation }) => {
                 placeholder='Re_Enter Password'
             />
              <View style={{width:wp(85),justifyContent:'center',alignContent:'center',alignItems:'center'}}>
-=======
-
-         <ImagePickerComponent/>
-          <TextInputComponent label="Complete Name" placeholder="John Smith" secureTextEntry={false} keyboardType="default"/>
-            <TextInputComponent label="Email Address" placeholder="john23@gmail.com" secureTextEntry={false} keyboardType="default"/>
-            <TextInputComponent label="Password" placeholder="123@john.smith" secureTextEntry={true} keyboardType="default"/>
-            <TextInputComponent label="Contact No." placeholder="+923456675634" secureTextEntry={false} keyboardType="numeric"/>
-            <TextInputComponent label="Years of Experience" placeholder="4" secureTextEntry={false} keyboardType="numeric"/>
-            <TextInputComponent label="Major Subject" placeholder="Databases" secureTextEntry={false} keyboardType="default"/>
-            <TextInputComponent label="Qualification" placeholder="Bachelors of Computer Sciences(or BSCS)" secureTextEntry={false} keyboardType="default"/>
-          
-          <PickDocumentComponent/>
->>>>>>> upstream/main
             <TouchableOpacity
               style={styles.btn}
             >
@@ -112,12 +94,8 @@ const TeacherSignUp = ({ navigation }) => {
             </View>
           </View>
         </ScrollView>
-<<<<<<< HEAD
         <Text style={styles.txt}>Or</Text>
       
-=======
-        
->>>>>>> upstream/main
         <View style={styles.bottonPart}>
                     <Text style={styles.bottomtxt}>Already have an account?</Text>
                     <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
@@ -226,7 +204,6 @@ const styles = StyleSheet.create({
         
     },
 bottonPart:{
-<<<<<<< HEAD
   // marginTop:2,
    marginBottom:hp(1),
    height:hp(2.5),
@@ -244,19 +221,6 @@ bottonPart:{
   marginLeft:-30,
   color:'black',
   }
-=======
-    marginBottom:80
-   },
-   linkbtn:{
-       color:themeColors.bg3,
-       position:"absolute",
-       marginTop:-19,
-       marginLeft:245,
-   },bottomtxt:{
-   alignSelf:"center",
-   marginLeft:-30,
-   }
->>>>>>> upstream/main
   });
 
 export default TeacherSignUp;

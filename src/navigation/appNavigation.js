@@ -9,7 +9,6 @@ import LoginScreen from '../screens/LoginScreen';
 import SelectRole from '../screens/SelectRole';
 import TeacherSignUp from '../screens/TeacherSignUp';
 import ParentSignUp from '../screens/ParentSignUp';
-import StudentSignUp from '../screens/StudentSignUp';
 const Stack = createNativeStackNavigator();
 
 
@@ -24,7 +23,6 @@ export default function AppNavigation() {
         <Stack.Screen name="SelectRole" options={{headerShown: false}} component={SelectRole} />
         <Stack.Screen name="TeacherSignUp" options={{headerShown: false}} component={TeacherSignUp} />
         <Stack.Screen name="ParentSignUp" options={{headerShown: false}} component={ParentSignUp} />
-        <Stack.Screen name="StudentSignUp" options={{headerShown: false}} component={StudentSignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   )
