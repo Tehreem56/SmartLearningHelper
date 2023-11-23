@@ -14,7 +14,7 @@ const SelectRole=({navigation}) =>{
        
         <View style={styles.midPart} >
             <TouchableOpacity
-                onPress={()=> navigation.navigate('')}
+                onPress={()=> navigation.navigate('StudentSignUp')}
               style={styles.btn}>
                     <Text 
                         style={styles.btntxt}

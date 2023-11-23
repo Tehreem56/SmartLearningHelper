@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {ArrowLeftIcon} from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import { widthPercentageToDP as wp,heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
+import TextInputComponent from './components/TextInputComponent';
 const ParentSignUp=({navigation}) =>{
    
   return (
@@ -37,34 +37,13 @@ const ParentSignUp=({navigation}) =>{
         style={styles.container2}
       >
         <View style={styles.formview}>
-            <Text  style={styles.Titlebox}>Full Name</Text>
-            <TextInput
-             style={styles.Inputbox}
-                
-               
-                placeholder='Enter Name'
-            />
-           <Text  style={styles.Titlebox}>Email Address</Text>
-            <TextInput
-             style={styles.Inputbox}
-                
-               
-                placeholder='Enter Your Email'
-            /><Text  style={styles.Titlebox}>Password</Text>
-            <TextInput
-             style={styles.Inputbox}
-                
-              secureTextEntry
-                placeholder='Enter Password'
-            />
-            
-            <Text  style={styles.Titlebox}>Contact No.</Text>
-            <TextInput
-             style={styles.Inputbox}
-                
-              secureTextEntry
-                placeholder='Enter Your Phone Number'
-            />
+
+            <TextInputComponent label="Complete Name" placeholder="John Smith" secureTextEntry={false} keyboardType="default"/>
+            <TextInputComponent label="Email Address" placeholder="john23@gmail.com" secureTextEntry={false} keyboardType="default"/>
+            <TextInputComponent label="Password" placeholder="123@john.smith" secureTextEntry={true} keyboardType="default"/>
+            <TextInputComponent label="Contact No." placeholder="+923456675634" secureTextEntry={false} keyboardType="numeric"/>
+          
+           
            
             <TouchableOpacity
                style={styles.btn}
@@ -74,16 +53,7 @@ const ParentSignUp=({navigation}) =>{
                 </Text>
             </TouchableOpacity>
         </View>
-        <Text  style={styles.txt}>
-            Or
-        </Text>
-        <View style={styles.iconView}>
-            <TouchableOpacity  >
-                <Image source={require('../assets/icons/google.png')} 
-                    style={styles.icon} />
-            </TouchableOpacity>
-           
-        </View>
+    
         <View style={styles.bottonPart}>
                     <Text style={styles.bottomtxt}>Already have an account?</Text>
                     <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
@@ -188,7 +158,7 @@ btntxt:{
 },
 bottonPart:{
    // marginTop:2,
-    marginBottom:5,
+    marginBottom:80,
    
    },
    linkbtn:{

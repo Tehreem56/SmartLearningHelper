@@ -5,11 +5,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeftIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import TextInputComponent from './components/TextInputComponent';
-import ImagePickerComponent from './components/ImagePickerComponent';
-const TeacherSignUp = ({ navigation }) => {
-
-
+import TextInputComponent from './components/TextInputComponent'
+;
+const StudentSignUp = ({ navigation }) => {
 
   return (
     <ScrollView style={{ backgroundColor: themeColors.bg, flex: 1 }}>
@@ -23,7 +21,7 @@ const TeacherSignUp = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.imgview}>
-          <Text style={{ color: themeColors.bg2, alignSelf: "center", fontSize: 20, fontWeight: "600" }}>Teacher Sign Up</Text>
+          <Text style={{ color: themeColors.bg2, alignSelf: "center", fontSize: 20, fontWeight: "600" }}>Student Sign Up</Text>
           <Image source={require('../assets/images/signup.png')}
             style={styles.img} />
         </View>
@@ -32,14 +30,13 @@ const TeacherSignUp = ({ navigation }) => {
         <ScrollView>
           <View style={styles.formview}>
 
-         <ImagePickerComponent/>
+
+
           <TextInputComponent label="Complete Name" placeholder="John Smith" secureTextEntry={false} keyboardType="default"/>
             <TextInputComponent label="Email Address" placeholder="john23@gmail.com" secureTextEntry={false} keyboardType="default"/>
             <TextInputComponent label="Password" placeholder="123@john.smith" secureTextEntry={true} keyboardType="default"/>
             <TextInputComponent label="Contact No." placeholder="+923456675634" secureTextEntry={false} keyboardType="numeric"/>
-            <TextInputComponent label="Years of Experience" placeholder="4" secureTextEntry={false} keyboardType="numeric"/>
-            <TextInputComponent label="Major Subject" placeholder="Databases" secureTextEntry={false} keyboardType="default"/>
-            <TextInputComponent label="Qualification" placeholder="Bachelors of Computer Sciences(or BSCS)" secureTextEntry={false} keyboardType="default"/>
+            <TextInputComponent label="Parent's Email" placeholder="smith56@gmail.com" secureTextEntry={false} keyboardType="default"/>
           
           
             <TouchableOpacity
@@ -167,4 +164,4 @@ bottonPart:{
    }
   });
 
-export default TeacherSignUp;
+export default StudentSignUp;
