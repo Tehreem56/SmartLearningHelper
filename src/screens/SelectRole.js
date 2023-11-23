@@ -3,10 +3,19 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { themeColors } from '../theme';
 import { widthPercentageToDP as wp ,heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { ArrowLeftIcon } from 'react-native-heroicons/solid';
 const SelectRole=({navigation}) =>{
   return (
     <SafeAreaView  style={styles.container}>
     <View >
+
+    <TouchableOpacity 
+                  onPress={()=> navigation.goBack()}
+                 
+                  style={styles.arrow}
+              >
+                  <ArrowLeftIcon size="20" color="black" />
+              </TouchableOpacity>
         <Text 
            style={styles.title}>
             Who Are You?
@@ -78,7 +87,15 @@ btntxt:{
 },
 midPart:{
     marginTop:23,
-}
+}, arrow:{
+    position:"absolute",
+    marginTop:-220,
+    marginLeft:-70,
+    backgroundColor:themeColors.bg2,
+    padding:8,
+    borderTopEndRadius:12,
+    borderBottomStartRadius:12,
+},
 
 });
 export default SelectRole;

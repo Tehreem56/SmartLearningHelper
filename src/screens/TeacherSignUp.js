@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import TextInputComponent from './components/TextInputComponent';
 import ImagePickerComponent from './components/ImagePickerComponent';
+import PickDocumentComponent from './components/PickDocumentComponent';
 const TeacherSignUp = ({ navigation }) => {
 
 
@@ -41,7 +42,7 @@ const TeacherSignUp = ({ navigation }) => {
             <TextInputComponent label="Major Subject" placeholder="Databases" secureTextEntry={false} keyboardType="default"/>
             <TextInputComponent label="Qualification" placeholder="Bachelors of Computer Sciences(or BSCS)" secureTextEntry={false} keyboardType="default"/>
           
-          
+          <PickDocumentComponent/>
             <TouchableOpacity
               style={styles.btn}
             >

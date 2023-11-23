@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Image, Button,StyleSheet,Text,TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { themeColors } from '../../theme';
+
 const ImagePickerComponent = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -22,18 +23,15 @@ const ImagePickerComponent = () => {
 
   return (
     <View>
-      {selectedImage && <Image source={selectedImage} style={styles.img} /> }{
-        selectedImage? <Text style={styles.txt}>Register Your Self!</Text>:null
-      }
-      
-      <View >
-      <TouchableOpacity
-        onPress={() => {pickImage() }}
-        style={styles.btn}
-      >
-        <Text style={styles.buttonText}>Pick Profile Picture</Text>
+      <TouchableOpacity onPress={() => pickImage()} style={styles.imgContainer}>
+        {selectedImage && <Image source={selectedImage} style={styles.img} />}
+        {!selectedImage && (
+          <Text style={styles.btn}>Pick Profile Picture</Text>
+        )}
       </TouchableOpacity>
-    </View>
+      {selectedImage && (
+        <Text style={styles.txt}>Register Yourself!</Text>
+      )}
     </View>
   );
 };
@@ -41,39 +39,38 @@ const ImagePickerComponent = () => {
 export default ImagePickerComponent;
 
 const styles = StyleSheet.create({
-   
-  
-    img:{
-        width:wp(20)  ,
-        height:hp(10),
-        marginLeft:10,
-       borderRadius:35,
-       marginBottom:6
-    },
-     
-   
-   
-    
-btn:{
-    backgroundColor:themeColors.bg2,
-    borderRadius:6,
-    padding:15,
-    
-    
-},
-txt:{
-  color:themeColors.bg3,
-  fontWeight:"bold",
-  fontSize:20,
-  position:"absolute",
-  marginLeft:90,
-  marginTop:20
-},
-buttonText:{
-    color :themeColors.bg3,
+  imgContainer: {
+    alignItems: 'center',
+  },
+  img: {
+    width: wp(20),
+    height: hp(10),
+    borderRadius: 35,
+    marginBottom: 6,
+  },
+  btn: {
+    backgroundColor: themeColors.bg2,
+    borderRadius: 6,
+    padding: 15,
+    paddingHorizontal:89,
+    color:themeColors.bg3,
     fontWeight:"600",
-    fontSize:17,
-    alignSelf:"center"
-}
-
-  });
+  },
+  txt: {
+    color: themeColors.bg3,
+    fontWeight: 'bold',
+    fontSize: 20,
+    position: 'absolute',
+    marginLeft: 90,
+    marginTop: 20,
+  },
+  buttonText: {
+    color: themeColors.bg3,
+    fontWeight: '600',
+    fontSize: 17,
+    alignSelf: 'center',
+  },
+  imgContainer:{
+    alignSelf:"flex-start"
+  }
+});
